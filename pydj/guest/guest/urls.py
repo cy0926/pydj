@@ -31,4 +31,5 @@ urlpatterns = [
     url(r'^sign_index/(?P<event_id>[0-9]+)/$', views.sign_index),
     url(r'^sign_index_action/(?P<event_id>[0-9]+)/$', views.sign_index_action),
     url(r'^logout/$', views.logout),  # 添加退出目录的路由
+    # url()
 ]
