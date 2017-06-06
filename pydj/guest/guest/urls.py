@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 from sign import views
 
@@ -31,5 +31,5 @@ urlpatterns = [
     url(r'^sign_index/(?P<event_id>[0-9]+)/$', views.sign_index),
     url(r'^sign_index_action/(?P<event_id>[0-9]+)/$', views.sign_index_action),
     url(r'^logout/$', views.logout),  # 添加退出目录的路由
-    # url()
+    url(r'^api/', include('sign.urls', namespace="sign")),     # 添加接口基本路径 “/api/”
 ]
